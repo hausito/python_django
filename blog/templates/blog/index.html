@@ -1,0 +1,24 @@
+{% extends "blog/base.html" %}
+{% block title %}Eothena{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/index.css"/>
+{% endblock %}
+{% block body_block %}
+<div class="container">
+  <div class="text-bg-light p-3">
+    <div class="shadow-lg p-3 mb-5 bg-body rounded">
+    <h1>Welcome to the Eothena !</h1>
+    <p class="established">The site was designed to bring people together.</p>
+    {% if user.is_authenticated %}
+        <h2 style="color:#331B3F;">Hello {{ user.username }}</h2>
+        <p class="established">Here you can find many posts and also create them</p>
+    {% else %}
+        <h2 style="color:#331B3F;">Register or Login if you'd like to</h2>
+        <p class="established">...create posts and also read them</p>
+    {% endif %}
+    </div>
+  </div>
+  <img src="media/png.png" class="img-fluid" alt="Image not loaded" style="width:400px;"/>
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+
+{% extends 'blog/base.html' %}
+{% block title %}Eothena| Profile{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="/static/registration.css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="https://code.jquery.com/jquery-3.3.1.slim.min.js" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js" rel="stylesheet" />
+<!-- Latest compiled and minified CSS -->
+   {% endblock %}
+{% block body_block %}
+<div class="container">
+    <div class="jumbotron">
+<div class="text-bg-light p-3"> 
+    <div class="shadow-lg p-3 mb-5 bg-body rounded">
+    <h1>Here you can edit your profile</h1>
+</div>
+</div>
+<div class="card shadow mb-4">
+    <div class="card-body p-5">
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form_1.as_p }}
+    {{ form_2.as_p }}
+   
+  
+       
+      
+    <input type="submit" name="" value="Update">
+</form>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}

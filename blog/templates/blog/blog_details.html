@@ -1,0 +1,171 @@
+{% extends 'blog/base.html' %}
+{% block title %}Eothena| Profile{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/blog_details.css"/>
+{% endblock %}
+{% block body_block %}
+
+<div class="blog-single gray-bg">
+  <div class="container">
+      <div class="row align-items-start">
+          <div class="col-lg-8 m-15px-tb">
+              <article class="article">
+                  <div class="article-img">
+                      <img src="https://www.fonstola.ru/images/201201/fonstola.ru_72827.jpg" title="" alt="not loaded">
+                  </div>
+                  <div class="article-title">
+                      <h6><a href="#">Lifestyle</a></h6>
+                      <h2>Where in the World You Can See Penguins</h2>
+                      <div class="media">
+                          <div class="avatar">
+                              <img alt="not loaded" src="/media/profile_pics/user_EFqj4ih.png"  class="rounded-circle">
+                          </div>
+                          <div class="media-body">
+                              <label>{{instance.user.first_name}} {{instance.user.last_name}}</label>
+                              <span>{{age}} years</span>
+                              <span>{{email}}</span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="article-content">
+                      <p>If you go on a voyage through Antarctica, a highlight is zooming through the icy water in Zodiac landing craft to observe loud colonies of chinstrap, emperor, Gentoo and Adelie penguins. Chinstrap penguins are named for the narrow black band under their heads, and Gentoo penguins have white straps across the top of their heads. Emperor penguins can be identified by the pale yellow coloring of their ears and breasts, and Adelie penguins by their tuxedo-like appearance.  Magellanic penguins, Gentoo penguins and rockhopper penguins—named for their ability to leap over obstacles— live on the rocky cliffs of the Falkland Islands. Millions of king penguins—penguins with golden highlights on their heads and chests—live on the beaches of South Georgia.</p>
+                  </div>
+                  <div class="article-content">
+                  <img alt="not loaded" src="{{instance.blog_pic.url}}">
+                 </div>
+              </article>
+              
+          </div>
+          <div class="col-lg-4 m-15px-tb blog-aside">
+              <!-- Author -->
+              <div class="widget widget-author">
+                  <div class="widget-title">
+                      <h3>Author</h3>
+                  </div>
+                  <div class="widget-body">
+                      <div class="media align-items-center">
+                          <div class="avatar">
+                              <img alt="not loaded" src="/media/profile_pics/user_EFqj4ih.png" class="rounded-circle">
+                          </div>
+                          <div class="media-body">
+                              <h6>Hello, I'm<br> {{instance.user.first_name}} {{instance.user.last_name}}</h6>
+                          </div>
+                        
+                      </div>
+                      <p>{{bio}}</p>
+                     
+                 
+             
+              </div>
+          
+              <!-- End Author -->
+              <!-- Trending Post -->
+              <div class="widget widget-post">
+                  <div class="widget-title">
+                      <button class="btn btn-primary px-4 ms-3"><a class="nav-link" href="{% url 'blog:user_blogs' instance.user.id %}">User Posts</a></button>
+                      {% if instance.user.username == user.username %}
+                      <button class="btn btn-primary px-4 ms-3"><a class="nav-link" href="{% url 'blog:delete' instance.id %}">Delete</a></button>
+                      {% endif %}
+                  </div>
+                  <div class="widget-body">
+
+                  </div>
+              </div>
+              <!-- End Trending Post -->
+              <!-- Latest Post -->
+              <div class="widget widget-latest-post">
+                  <div class="widget-title">
+                      <h3>Ads</h3>
+                  </div>
+                  <div class="widget-body">
+                      <div class="latest-post-aside media">
+                          <div class="lpa-left media-body">
+                              <div class="lpa-title">
+                                  <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
+                              </div>
+                              <div class="lpa-meta">
+                                  <a class="name" href="#">
+                                      Default
+                                  </a>
+                                  
+                              </div>
+                          </div>
+                          <div class="lpa-right">
+                              <a href="#">
+                                  <img src="https://via.placeholder.com/400x200/FFB6C1/000000" title="" alt="">
+                              </a>
+                          </div>
+                      </div>
+                      <div class="latest-post-aside media">
+                          <div class="lpa-left media-body">
+                              <div class="lpa-title">
+                                  <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
+                              </div>
+                              <div class="lpa-meta">
+                                  <a class="name" href="#">
+                                      Default
+                                  </a>
+                                
+                              </div>
+                          </div>
+                          <div class="lpa-right">
+                              <a href="#">
+                                  <img src="https://via.placeholder.com/400x200/FFB6C1/000000" title="" alt="">
+                              </a>
+                          </div>
+                      </div>
+                      <div class="latest-post-aside media">
+                          <div class="lpa-left media-body">
+                              <div class="lpa-title">
+                                  <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
+                              </div>
+                              <div class="lpa-meta">
+                                  <a class="name" href="#">
+                                      Default
+                                  </a>
+                               
+                              </div>
+                          </div>
+                          <div class="lpa-right">
+                              <a href="#">
+                                  <img src="https://via.placeholder.com/400x200/FFB6C1/000000" title="" alt="">
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- End Latest Post -->
+              <!-- widget Tags -->
+              <div class="widget widget-tags">
+                  <div class="widget-title">
+                      <h3>Latest Tags</h3>
+                  </div>
+                  <div class="widget-body">
+                      <div class="nav tag-cloud">
+                          <a name="q" href="/blog/blogs/">Design</a> 
+                          <a name="q" href="/blog/blogs/">Development</a>
+                          <a name="q" href="/blog/blogs/">Travel</a>
+                          <a name="q" href="/blog/blogs/">Web Design</a>
+                          <a name="q" href="/blog/blogs/">Marketing</a>
+                          <a name="q" href="/blog/blogs/">Research</a>
+                          <a name="q" href="/blog/blogs/">Managment</a>
+  
+                      </div>
+                  </div>
+              </div>
+              <!-- End widget Tags -->
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+
+
+    
+      
+
+
+
+
+
+{% endblock %}
