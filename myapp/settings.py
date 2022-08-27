@@ -30,7 +30,6 @@ SECRET_KEY = 'django-insecure-v(70=2r7vn!#)5po57ojjyd*rw3^$*p45=y_q=3^#+62+czw&t
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '192.168.100.3',
     '127.0.0.1',
     'utopiablogs.herokuapp.com/',
 ]
