@@ -32,6 +32,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     '192.168.100.3',
     '127.0.0.1',
+    'utopiablogs.herokuapp.com/',
 ]
 
 
